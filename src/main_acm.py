@@ -15,8 +15,11 @@ import random
 start_url='https://acm.bitnp.net'
 html=requests.get(start_url+'/rank')
 soup=BeautifulSoup(html.text,'lxml')
-os.makedirs(os.path.join('D:\代码\Python Study\Temp\Temp\爬虫','成品'))
-os.chdir('D:\代码\Python Study\Temp\Temp\爬虫\成品')
+try:
+    os.chdir('../成品/main_acm')
+except:
+    os.makedirs(os.path.join('../成品','main_acm'))
+    os.chdir('../成品/main_acm')
 
 def get_pic_url(this_url):
     html=requests.get(this_url)
