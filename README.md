@@ -1,8 +1,29 @@
 # WebCrawler_Learn
+>2017.11.22
+>>Create repository.
+>>Add "main.py".
+>
+>2017.11.26
+>>New Crawler "main_proxies.py".
+>>New module "SendMail".
+>>Modify old Crawler and rename to "main_acm".
+>>"main_acm" can save the images to the folder in this project now.
 
-	目前只有一个main.py
-	可以把 https://acm.bitnp.net 上的用户的头像扒下来
-	然而这份代码充斥着糟糕的代码结构和完全没有的注释
-	算是第一个坑吧hhh
-
-2017.11.22
+------------------------
+## main_acm
+    This Crawler can get all the profile picture of users from https://acm.bitnp.net.<br>  
+    Unfortunately,there are some problems: The style of code is still terrible and lack comments.<br>  
+    Maybe they could be solved at next update.
+    
+## main_proxies
+    This Crawler can get all the proxies-ip from https://www.kuaidaili.com.
+    
+## SendMail
+    This module can send email by smtp server.<br>   
+    There are two function in it: login(stmp_address,stmp_port,From_address,password) and sendmail(To_address,subject,content,attachment_address(or not)). Exemple:<br>   
+    ```python
+    import SendMail
+    SendMail.login('smtp.163.com', 25, 'xxxxxxx@163.com', '*********')
+    SendMail.sendmail('xxxxxxxx@gmail.com', 'Text', 'Hello,by Python', 'E:\hello.txt')
+    SendMail.sendmail('xxxxxxxx@foxmail.com', 'Text2', 'Hello,by Python')
+    ```
